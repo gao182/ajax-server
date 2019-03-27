@@ -15,8 +15,8 @@ http.createServer( function( request, response){
 在createServer函数内，我们可以写入以下代码：
 
 1. response.writeHead(404, 'not found')  -- 返回响应头，且响应头的状态码为`404`，描述为`not found`
-	response.writeHead(202, 'ok')     -- 返回响应头，且响应头的状态码为`200`，描述为`ok`
-2. response.write('<h1>404 Not found</h1>')  -- 返回响应体，并在页面内渲染大标题，内容为`404 Not found`
+	response.writeHead(200, 'ok')     -- 返回响应头，且响应头的状态码为`200`，描述为`ok`
+2. response.write('<\h1>404 Not found<\/h1>')  -- 返回响应体，并在页面内渲染大标题，内容为`404 Not found`
 	response.write(fs.readFileSync(filePath))  -- 返回响应体，并在页面内渲染文件内容
 	fs.readFileSync(filePath)   --fs.readFileSync()是同步读取文件内容，该方法属于fs模块，使用前需要引入fs模块（var fs= require(“fs”) ）
 3. response.end()  --结束响应
